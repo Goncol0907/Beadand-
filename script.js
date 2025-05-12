@@ -7,7 +7,7 @@ function updateBalanceDisplay() {
 
 function drawWheel() {
   const table = document.getElementById("roulette-table");
-  const redNumbers = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
+  const redNumbers = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35];
 
   for (let i = 1; i <= 36; i++) {
     const numberDiv = document.createElement("div");
@@ -24,7 +24,7 @@ function drawWheel() {
 
 function getColor(number) {
   if (number === 0) return "zöld";
-  const red = [1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36];
+  const red = [1,3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,33,35];
   return red.includes(number) ? "piros" : "fekete";
 }
 
@@ -123,3 +123,9 @@ window.onload = () => {
   updateBalanceDisplay();
   drawWheel();
 };
+
+
+function toggleNavbar() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("open");
+  }
