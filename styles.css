@@ -1,0 +1,140 @@
+/* Alap stílusok */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  margin: 0;
+  background-image: url(Bg.jpg);
+  background-size: cover;        
+  background-repeat: no-repeat;  
+  background-position: center;   
+  background-attachment: fixed;  
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background-color: #333;
+}
+
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  width: 100%;
+}
+
+.navbar a {
+  display: block;
+  padding: 0.938rem;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  border-bottom: 1px solid #444;
+}
+
+.navbar a:hover {
+  background-color: #575757;
+}
+
+/* Reszponzivitás */
+@media (max-width: 768px) {
+  .navbar {
+      width: 100%;
+      height: auto;
+  }
+
+  .navbar ul {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .navbar a {
+      padding: 10px;
+      text-align: left;
+  }
+}
+
+.container {
+  max-width: 600px;
+ margin:9.125rem auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.form label {
+  display: block;
+  margin: 10px 0;
+}
+
+input, select {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+#roulette-table {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 8px solid #333;
+  background: radial-gradient(circle, #444 40%, #222);
+  
+}
+
+.number {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  color: white;
+  transform-origin: 50% 150px;
+}
+
+.zero {
+  background-color: green;
+  top: -3px;
+  left: 130px;
+  z-index: 1;
+}
+
+#ball {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  top: 135px;
+  left: 142px;
+  z-index: 2;
+}
