@@ -2,51 +2,50 @@
 <html lang="hu">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rulett Szimulátor</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rulett játék</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h1>🎰 Rulett Szimulátor</h1>
-    <div id="balance">💼 Egyenleg: <b>10000</b> Ft</div>
-
-    <div class="section">
-      <h3>🔢 Számra fogadás</h3>
-      <label>Szám (0–36):</label>
-      <input type="number" id="betNumber" min="0" max="36" />
-      <label>Tét (Ft):</label>
-      <input type="number" id="amountNumber" min="0" />
+    <h1>🎲 Rulett Játék</h1>
+    
+    <div id="roulette-table">
+      <div id="ball"></div>
+      <div class="number zero">0</div>
+      <!-- A többi szám JS-ben generálódik -->
     </div>
 
-    <div class="section">
-      <h3>🎨 Színre fogadás</h3>
-      <label>Szín:</label>
-      <select id="betColor">
-        <option value="">-- Válassz --</option>
-        <option value="piros">Piros</option>
-        <option value="fekete">Fekete</option>
-      </select>
-      <label>Tét (Ft):</label>
-      <input type="number" id="amountColor" min="0" />
+    <div class="form">
+      <label>Szám (0-36): <input type="number" id="betNumber" min="0" max="36"></label>
+      <label>Tét (számra): <input type="number" id="amountNumber"></label>
+
+      <label>Szín:
+        <select id="betColor">
+          <option value="">-- Válassz --</option>
+          <option value="piros">Piros</option>
+          <option value="fekete">Fekete</option>
+        </select>
+      </label>
+      <label>Tét (színre): <input type="number" id="amountColor"></label>
+
+      <label>Páros/Páratlan:
+        <select id="betEvenOdd">
+          <option value="">-- Válassz --</option>
+          <option value="páros">Páros</option>
+          <option value="páratlan">Páratlan</option>
+        </select>
+      </label>
+      <label>Tét (páros/páratlan): <input type="number" id="amountEvenOdd"></label>
+
+      <button onclick="spinRoulette()">Pörgetés</button>
     </div>
 
-    <div class="section">
-      <h3>⚖️ Páros/Páratlan</h3>
-      <label>Választás:</label>
-      <select id="betEvenOdd">
-        <option value="">-- Válassz --</option>
-        <option value="páros">Páros</option>
-        <option value="páratlan">Páratlan</option>
-      </select>
-      <label>Tét (Ft):</label>
-      <input type="number" id="amountEvenOdd" min="0" />
-    </div>
-
-    <button onclick="spinRoulette()">🎲 Pörgetés</button>
+    <p id="balance">💼 Egyenleg: <b>10000</b> Ft</p>
     <div id="result"></div>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+  
