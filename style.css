@@ -1,68 +1,85 @@
 body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    margin: 0;
-    background-image: url(Bg.jpg);
-    background-size: cover;        
-    background-repeat: no-repeat;  
-    background-position: center;   
-    background-attachment: fixed;  
-  }
+  font-family: sans-serif;
+  background: #202020;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.form label {
+  display: block;
+  margin: 10px 0;
+}
+
+input, select {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 1.1em;
+}
+
+#roulette-table {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 50%;
+  border: 8px solid #333;
+  background: radial-gradient(circle, #444 40%, #222);
   
-  .container {
-    max-width: 500px;
-   
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  h1, h3 {
-    text-align: center;
-  }
-  
-  .section {
-    margin-bottom: 20px;
-  }
-  
-  label, select, input {
-    display: block;
-    width: 100%;
-    margin: 6px 0;
-    font-size: 1em;
-    padding: 8px;
-    box-sizing: border-box;
-  }
-  
-  button {
-    width: 100%;
-    padding: 12px;
-    font-size: 1em;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #218838;
-  }
-  
-  #balance, #result {
-    font-size: 1.1em;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  @media (max-width: 500px) {
-    h1 {
-      font-size: 1.5em;
-    }
-  
-    button {
-      font-size: 1em;
-    }
-  }
-  
+}
+
+.number {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  font-weight: bold;
+  color: white;
+  transform-origin: 50% 150px;
+}
+
+.zero {
+  background-color: green;
+  top: -3px;
+  left: 130px;
+  z-index: 1;
+}
+
+#ball {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 50%;
+  top: 135px;
+  left: 142px;
+  z-index: 2;
+}
