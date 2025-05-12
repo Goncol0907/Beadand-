@@ -1,4 +1,5 @@
 let balance = 10000;
+let canSpin = true;
 
 function updateBalanceDisplay() {
   document.getElementById("balance").innerHTML = `💼 Egyenleg: <b>${balance}</b> Ft`;
@@ -38,18 +39,24 @@ function animateBallToNumber(targetNumber) {
 }
 
 function spinRoulette() {
-  const ball = document.getElementById("ball");
-  ball.style.transition = "none";
-  ball.style.transform = "rotate(0deg) translateY(-130px)";
-
-  const number = Math.floor(Math.random() * 37);
-  setTimeout(() => {
-    animateBallToNumber(number);
-  }, 50);
-
-  setTimeout(() => {
-    evaluateSpin(number);
-  }, 2000);
+  if (canSpin){
+    canSpin = false
+    const ball = document.getElementById("ball");
+    ball.style.transition = "none";
+    ball.style.transform = "rotate(0deg) translateY(-130px)";
+  
+    const number = Math.floor(Math.random() * 37);
+    setTimeout(() => {
+      animateBallToNumber(number);
+    }, 50);
+  
+    setTimeout(() => {
+      evaluateSpin(number);
+    }, 2000);
+  }
+  else{
+    console.log("Nem pörgethetsz!")
+  }
 }
 
 function evaluateSpin(number) {
@@ -109,6 +116,7 @@ function evaluateSpin(number) {
   updateBalanceDisplay();
   resultText += `<br><b>💰 Összes nyeremény: ${winTotal} Ft</b>`;
   document.getElementById("result").innerHTML = resultText;
+  canSpin = true  
 }
 
 window.onload = () => {
