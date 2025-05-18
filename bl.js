@@ -119,3 +119,8 @@ function reset() {
   }
   document.getElementById("game").style.display = "none";
 }
+
+function toggleNavbar() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("open");
+  }

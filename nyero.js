@@ -53,3 +53,8 @@ function spin() {
     spinning = false;
   }, 2000);
 }
+
+function toggleNavbar() {
+    const navbar = document.getElementById("navbar");
+    navbar.classList.toggle("open");
+  }
