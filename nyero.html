@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <title>Nyerőgép – Kar jobb oldalon</title>
+  <link rel="stylesheet" href="style.css"> <!-- ha CSS-t külön raksz -->
+</head>
+<body class="container">
+  <div class="slot-machine">
+    <div class="lever" onclick="spin()"></div>
+    <h1>🎰 Nyerőgép</h1>
+    <div class="balance" id="balance">Egyenleg: 100 Ft</div>
+    <div class="reels">
+      <div class="reel" id="reel1">❓</div>
+      <div class="reel" id="reel2">❓</div>
+      <div class="reel" id="reel3">❓</div>
+    </div>
+    <div class="message" id="message"></div>
+  </div>
+
+  <!-- ✅ Itt csatoljuk be a külön JS fájlt -->
+  <script src="nyero.js"></script>
+</body>
+</html>
