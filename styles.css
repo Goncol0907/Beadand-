@@ -1,15 +1,16 @@
-/* Alap stílusok */
+
 body {
     color: #fefefe;
     text-shadow: 2px 2px 4px #000;
     font-family: Arial, sans-serif;
     padding: 0;
     margin: 0;
-    background-image: url('IMG/Bg.jpg');
+    background-image: url(IMG/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    text-align: center;
   }
 
   .navbar {
@@ -62,7 +63,6 @@ body {
   }
   
 
-  /* Mobil nézet */
   @media (max-width: 768px) {
     .navbar {
       transform: translateX(-100%);
@@ -93,7 +93,7 @@ body {
     }
   }
 
-  /* Amikor a navbar nyitva van, a gomb jobbra tolódik */
+
   .navbar.open ~ .toggle-btn {
     left: auto;
     right: 10px;
@@ -102,7 +102,7 @@ body {
   
   
 
-  /* Tartalom eltolása desktopon */
+
   @media (min-width: 769px) {
     body {
       padding-left: 200px;
@@ -187,7 +187,100 @@ body {
     left: 142px;
     z-index: 2;
   }
+  .j-hand, .d-hand {
+    width: 50px;
+    height: 20%;
+    padding-left:40% ;
+  }
+  #game {
+    display: none;
+    width: 20%;
+    height: 20%;
+    margin: auto;
+    text-align: center;
+    background: #2a2a2a;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+  h2{
+    all:unset
+  }
+
+   .slot-machine {
+      display: inline-block;
+      background: #222;
+      border: 5px solid #555;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .reels {
+      font-size: 50px;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .reel {
+      width: 60px;
+      height: 60px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid #888;
+      border-radius: 10px;
+      font-size: 48px;
+      transition: transform 0.2s;
+    }
+
+    .spinning {
+      animation: spin 0.2s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotateX(0); }
+      100% { transform: rotateX(360deg); }
+    }
+
+    .message {
+      margin-top: 20px;
+      font-size: 24px;
+      height: 30px;
+    }
+
+    .balance {
+      margin-top: 10px;
+      font-size: 20px;
+    }
 
 
+    .lever {
+      position: absolute;
+      top: -20px;
+      right: -50px;
+      width: 20px;
+      height: 100px;
+      background: #666;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
 
- 
+    .lever::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 30px;
+      background: red;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -20px;
+      left: -5px;
+    }
+
+    .lever:active {
+      transform: translateY(30px);
+    }
