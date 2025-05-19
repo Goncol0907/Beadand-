@@ -110,7 +110,7 @@ body {
   }
   
   .container {
-    max-width: 600px;
+    max-width: 56.25rem;
    margin: auto;
     padding: 20px;
     text-align: center;
