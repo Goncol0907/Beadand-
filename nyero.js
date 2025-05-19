@@ -1,6 +1,6 @@
 const symbols = ['🍒', '🍋', '🔔', '💎', '7️⃣'];
-let balance = 100;
-const bet = 10;
+let balance = 1000;
+const bet = 100;
 let spinning = false;
 
 function getRandomSymbol() {
